@@ -6,6 +6,7 @@ const usePrediction = () => {
 
   const makePrediction = async (image: any, prompt: any) => {
     setIsLoading(true);
+    console.log(image, prompt);
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 2000));
     setIsLoading(false);
@@ -147,6 +148,7 @@ function App() {
   const fileInputRef = useRef<any>(null);
   const { makePrediction, isLoading } = usePrediction();
   const { addUser } = useCount();
+  console.log(isLoading);
   useEffect(() => {
     const callFunc = async () => {
       await addUser();
